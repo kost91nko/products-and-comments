@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="product-detail">
+    <dl>
+      <dt>Name</dt>
+      <dd>{{currentProduct.name}}</dd>
+      <dt>Description</dt>
+      <dd>{{currentProduct.description}}</dd>
+      <dt>Price</dt>
+      <dd>{{currentProduct.price | currency:"$"}}</dd>
+    </dl>
+  </div>
+  <div class="product-comments">
+    <h4>Comments: </h4>
+    <div class="product-comment" ng-repeat="comment in currentProduct.comments track by comment._id">
+      <div class="comment-header">{{comment.date | date:medium}} - {{comment.author}}</div>
+      <div class="well comment-body">{{comment.body}}</div>
+    </div>
+  </div>
+</div>
